@@ -21,7 +21,7 @@ public class Settings : MonoBehaviour
     [Header("Dark Environment")]
     [SerializeField] private Environment darkEnv;
 
-    private Environment currentEnv;
+    [HideInInspector] public Environment currentEnv;
     private CanvasBehavior[] allCanvas;
 
     // Start is called before the first frame update
@@ -71,10 +71,12 @@ public class Environment
     [SerializeField] private Material skyboxMaterial;
     [SerializeField] private Color fogColor;
 
-    [SerializeField] private Color backgroundColor;
-    [SerializeField] private Color backgroundSecondColor;
-    [SerializeField] private Color txtColor;
-    [SerializeField] private Color borderColor;
+    public Color backgroundColor;
+    public Color backgroundSecondColor;
+    public Color txtColor;
+    public Color borderColor;
+
+    public Color highlightColor;
     public void Set(Renderer _floorRenderer, CanvasBehavior[] _allCanvas)
     {
         _floorRenderer.material = floorMaterial;
